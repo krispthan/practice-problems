@@ -14,13 +14,33 @@ function sumArray(arr){
         }
         return counter;
     }
-   
 
+//create a function that passes a parameter num
+//create a counter 
+// iterate through the list of array
+// create a variable to see what the current position index is in the array
+//add the first index and the next index (i+1)
+//create a variable that contains the sum of the index 
+//check to see if the number is equal or less than the parameter
+//if less, continue adding the next index
+//if false, stop
+var sumOfArrayLength=   [4,2,3,6,7,1,8,10,9]; 
 
-function fitWithinVal(){
-
+function fitWithinVal(arr, numToCompare){
+    var output= [];
+    var runningTotal =0;
+    for(var i = 0; i < arr.length; i++ ){
+        var currentPosition = arr[i]; 
+        var tempRunningTotal = runningTotal + currentPosition;
+         if(tempRunningTotal < numToCompare){
+             runningTotal = tempRunningTotal;
+             output.push(currentPosition);
+         } 
+    }
+    return output;
 }
 
+console.log(fitWithinVal(sumOfArrayLength, 30));
 
 //create a function with a parameters
 //iterate through the list of names 
@@ -75,12 +95,31 @@ var person2=
   //first locate each of  values in each object 
   //join the values together followed by a comma
 
-function makeLabel(){
-  return `${person1[0].greeting} ${person1[0].givenName} ${person1[0].familyName}
-${person1[0]["home address"].streetNumber} ${person1[0]["home address"].streetName}
-${person1[0]["home address"].city}, ${person1[0]["home address"].state} ${person1[0]["home address"].zip}`;
+function makeLabel(person){
+  return `${person.greeting} ${person.givenName} ${person.familyName}
+${person["home address"].streetNumber} ${person["home address"].streetName}
+${person["home address"].city}, ${person["home address"].state} ${person["home address"].zip}`;
   
-
+return `${person.greeting} ${person.givenName} ${person.familyName}
+${person["home address"].streetNumber} ${person["home address"].streetName}
+${person["home address"].city}, ${person["home address"].state} ${person["home address"].zip}`
 }
 
-console.log(makeLabel());
+
+// function makeSecondLabel(){
+//     return `${person[0].greeting} ${person[0].givenName} ${person[0].familyName}
+//     ${person[0]["home address"].streetNumber} ${person[0]["home address"].streetName}
+//     ${person[0]["home address"].city}, ${person[0]["home address"].state} ${person[0]["home address"].zip}`
+// }
+// console.log(makeSecondLabel());
+
+//unit class
+
+function removeClassFromElement(){
+    $('element').removeClass('element');
+}
+
+
+function toggleClass(){
+$('.class')toggleClass();
+}
