@@ -33,16 +33,86 @@ function wordOfOccurances(wordOfArray){
 }
 wordOfOccurances(animalArray);
 
+//Word Lengths:
+//create a container that stores the length of each value of word 
+
+var arrayOfWords=['happy','mad','angry','hungry', 'sad'];
 
 
-function wordLengths(){
-
+function wordLengths(arr){
+    var output=[];
+    for(var i =0; i<arr.length; i++){
+        var currentWord = arr[i];
+        var currentNumChar= currentWord.length;
+        output.push(currentNumChar);
+    }
+    return arr;
 }
+wordLengths(arrayOfWords);
+//iterate through the array 
+//get the min number in an array Math.min
+//get the max number in an array Math.max
+//get the average number in an array using reduce()
+var numArray= [5,-5,15,25,12,2];
+function getMinMaxMean(arr){
+    var findMin=Math.min(...arr);
+    var findMax= Math.max(...arr);
+    var findTotal = arr.reduce(findSum);
+    var findLength= arr.length;
+    var findAverage = findTotal/findLength;
+  return (findMin, findAverage,findMax); 
+    }
 
-function getMinMaxMean(){
+getMinMaxMean(numArray);
 
+function findSum(a,b){
+    return a+b;
 }
+findSum(numArray);
 
-function findMode(){
+//frequency map
+//create an object literal
+//iterate through the array of keys 
+//add some key pair values in the object
 
+var numArray2=[4,6,3,4,3,6,6,7];
+function findMode(arr){
+    var numObject={};
+    for(var i=0; i<arr.length; i++){
+        var currentNum = arr[i];
+        if(numObject[currentNum]){
+            numObject[currentNum]++;
+        } else {
+            numObject[currentNum]=1;
+        }
+    }
+    var highestNumCount = 0;
+    var highestNum ="";
+    var keyObject = Object.keys(numObject);
+    for(var i=0; i<keyObject.length; i++){
+        var currentKeyObject = keyObject[i];
+        if(numObject[currentKeyObject] > highestNumCount){
+            highestNumCount = numObject[currentKeyObject];
+            highestNum = currentKeyObject;
+    }
+    }
+    return highestNum;
 }
+findMode(numArray2);
+
+var aStringOfWords ="The quick brown fox jumped over the lazy dog";
+function findLongestWordLength(str) {
+      var strSplit = str.split(' ');
+    var currentWordCount = 0;
+     var theWord= null;
+  for(var i= 0; i < strSplit.length; i++){
+    var currentWord= strSplit[i];
+    if(strSplit[i].length > currentWordCount){
+      currentWordCount = strSplit[i].length;
+      theWord =strSplit[i];
+    }
+
+  }
+  return currentWordCount;
+}
+findLongestWordLength(aStringOfWords);
