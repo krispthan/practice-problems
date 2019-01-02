@@ -12,6 +12,7 @@ function unitTest(testData) {
         console.error(testData[testI].functionToTest + ' is not defined.  Did you rename/remove it from yourcode.js?');
         return false;
       }
+      debugger;
       var result = window[testData[testI].functionToTest].apply(null, testInputs);
       var jsonResult = JSON.stringify(result, null, 2);
       var testFunction = ()=>true;

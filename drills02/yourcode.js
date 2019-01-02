@@ -9,7 +9,10 @@
 //and set the words appear most often to the current index
 var animalArray= ['dog','cat','dog','pig','canary','cat','dog']
 
-function wordOfOccurances(wordOfArray){
+
+
+  
+  function countOccurences(wordOfArray){
     var inputObject={};
     for(var i =0; i<wordOfArray.length; i++){
         var currentAnimal = wordOfArray[i];
@@ -20,18 +23,18 @@ function wordOfOccurances(wordOfArray){
         }
     }   
     var highestWordCount = 0;
-    var wordAppearsMostOften = "";  
+    // var wordAppearsMostOften = "";  
     var keyArray = Object.keys(inputObject);
  for(var i=0; i< keyArray.length; i++){
     var currentKeyArray = keyArray[i];  
     if(inputObject[currentKeyArray] > highestWordCount){
         highestWordCount = inputObject[currentKeyArray];
-        wordAppearsMostOften= currentKeyArray;
+        // wordAppearsMostOften= currentKeyArray;
     }
  }
- return wordAppearsMostOften;
+ return highestWordCount;
 }
-wordOfOccurances(animalArray);
+// wordOfOccurances(animalArray);
 
 //Word Lengths:
 //create a container that stores the length of each value of word 
@@ -111,7 +114,6 @@ function findLongestWordLength(str) {
       currentWordCount = strSplit[i].length;
       theWord =strSplit[i];
     }
-
   }
   return currentWordCount;
 }
