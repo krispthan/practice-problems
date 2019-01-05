@@ -23,13 +23,12 @@ var animalArray= ['dog','cat','dog','pig','canary','cat','dog']
         }
     }   
     var highestWordCount = 0;
-    // var wordAppearsMostOften = "";  
     var keyArray = Object.keys(inputObject);
  for(var i=0; i< keyArray.length; i++){
     var currentKeyArray = keyArray[i];  
     if(inputObject[currentKeyArray] > highestWordCount){
         highestWordCount = inputObject[currentKeyArray];
-        // wordAppearsMostOften= currentKeyArray;
+   
     }
  }
  return highestWordCount;
@@ -49,7 +48,7 @@ function wordLengths(arr){
         var currentNumChar= currentWord.length;
         output.push(currentNumChar);
     }
-    return arr;
+    return output;
 }
 wordLengths(arrayOfWords);
 //iterate through the array 
