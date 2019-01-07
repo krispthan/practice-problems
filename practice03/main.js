@@ -4,29 +4,30 @@ var arrayMultiData = ['true',true,'1',5,'happy','4', false, 10, 'eat'];
 //create three different array
 
 
-function createMultiArray(arr){
-    var multiObject= {};
-    var strArray=[];
-    var numArray=[];
-    var booleanArray=[];
- for(var i =0; i<arr.length; i++){
-     var currentIndex= arr[i];
-      var findTypeOf = "";
-      switch (findTypeOf){
-          case "number":
-         numArray.push(multiObject[currentIndex]);
-         break;
-         console.log("numArray", numArray);
-          case "string":
-          strArray.push(multiObject[currentIndex]);
-          break;
-          case "boolean":
-          boolean.push(multiObject[currentIndex]);
-          break;
-          default:
-           console.log('Error');
-      }
- }
- return (numArray, strArray, booleanArray);
+
+function createMultiArray(array){
+    var newObject1={
+        string:[],
+        number:[],
+        boolean:[]
+    }
+    var currentIndex = null;
+    var findTypeOf ="";
+    for(var i=0; i<array.length; i++){
+        currentIndex= array[i];
+        findTypeOf =typeof(currentIndex);
+        switch (findTypeOf){
+            case "number":
+            newObject1.number.push(currentIndex);
+            break;
+            case "string":
+            newObject1.string.push(currentIndex);
+            break;
+            case "boolean":
+            newObject1.boolean.push(currentIndex);
+        }
+    }
+    return newObject1;
 }
+var newObject2=createMultiArray(arrayMultiData);
 console.log(createMultiArray(arrayMultiData));
