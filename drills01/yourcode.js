@@ -114,12 +114,3 @@ ${person["home address"].city}, ${person["home address"].state} ${person["home a
 // console.log(makeSecondLabel());
 
 //unit class
-
-function removeClassFromElement(){
-    $('element').removeClass('element');
-}
-
-
-function toggleClass(){
-$('.class')toggleClass();
-}
