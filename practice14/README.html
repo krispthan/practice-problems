@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Array Factors</title>
+	<script>
+	
+	var input =[4,2,8,6,3,9];
+	function arraySequence(input){
+		var newObj={};
+		var newArrayValue=[];
+		for(var i=0; i <input.length; i++){
+			if(input[i] /2){
+				var quotient = Math.floor(input[i]/2);
+				var remainder = (quotient/2);
+				newArrayValue.push(quotient,remainder);
+				for(var index in newObj){
+				if(input[i]){
+					newObj(input[i])= newArrayValue;
+				}
+				else if( input[i]/ 3){
+				 quotient = Math.floor(input[i]/3);
+				remainder = (quotient/3);
+				newArrayValue.push(quotient,remainder);
+				for(var index in newObj){
+				if(input[i]){
+					newObj(input[i])= newArrayValue;
+				}
+					
+			} 
+					
+			// for(var index in newObj){
+			// 	if(input[i]){
+			// 		newObj(input[i])= newArrayValue;
+			// 	}
+						
+				
+				//  }
+		}
+		return newObj;
+	}
+	console.log(arraySequence(input));
+	
+	
+	
+	
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
+// ## array factors
+
+// Build a function that takes one array and finds all other elements of the array that are factors of its an element
+
+// - Write a function that takes one parameter
+// 	- Parameter 1 - an array of numbers
+// - The function should return an object with multiple arrays in it, one for each non-repeating number in the input array
+// - repeated numbers should not be added twice
+// - Example:
+// 	- `arrayFactors([4,2,8,6,3,9]);`
+// 	- Output - {
+// 		4: [2],
+// 		2: [],
+// 		8: [4,2],
+// 		6: [2,3],
+// 		3: [],
+// 		9: [3]
+// 	}
